@@ -1,0 +1,57 @@
+// 1    2    3    4    5 //
+//                       //
+// 6    7    8    9   10 //
+//                       //
+// 11  12   13   14   15 //
+//                       //
+// 16  17   18   19   20 //
+//                       //
+// 21  22   23   24   25 //
+
+
+  x
+x 1 x
+  x
+
+
+
+
+
+
+
+
+            drawTemporaryShips(ship_x_position, ship_y_position);
+            if(playerBoard[ship_x_position - 1] == 0) {
+                clearTemporaryShips(ship_x_position - 1);
+            } if else(playerBoard[ship_x_position + 1] == 0) {
+                clearTemporaryShips(ship_x_position + 1);
+            }
+
+
+
+
+
+
+
+            void clearTemporaryShips(int x, int y) {
+                gotoxy(y * 2 + LEFT_TOP_X, x + LEFT_TOP_Y);
+                textbackground(CYAN);
+            }
+
+
+
+
+
+
+            void drawTemporaryShips(int y, int x) {
+                if (x >= 0 && x < ROWS && y >= 0 && y < COLS) {
+                    if (playerBoard[x][y] == 0) {
+                        playerBoard[x][y] = 1;
+                        gotoxy(y * 2 + LEFT_TOP_X, x + LEFT_TOP_Y);
+                        textbackground(BLUE);
+                        textcolor(RED);
+                        printf("%c", halfBlock);
+                        *fehler = FALSE;
+                    }
+                }
+            }
